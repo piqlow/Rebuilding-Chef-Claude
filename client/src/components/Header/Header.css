@@ -1,0 +1,28 @@
+.header {
+  width: 100%;
+  border-bottom: 2px solid gray;
+}
+
+.container {
+  width: 900px;
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 8px;
+}
+
+h1 {
+  font-size: 48px;
+  font-family: "Bricolage Grotesque";
+}
+
+button {
+  font-size: 20px;
+  border: none;
+  background-color: black;
+  color: white;
+  padding: 15px 24px;
+  border-radius: 5px;
+  cursor: pointer;
+}
