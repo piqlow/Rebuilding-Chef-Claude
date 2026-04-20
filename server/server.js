@@ -2,6 +2,7 @@ import express from "express"
 import cors from "cors"
 import 'dotenv/config'
 import { generateText } from "ai"
+import { openai } from "@ai-sdk/openai"
 
 const app = express()
 
@@ -16,7 +17,7 @@ app.post('/ai', async (req, res) => {
       prompt: `I have ${ingredientsString}. Please give me a recipe you'd recommend I make!`
     })
 
-    res.json({
+    return res.json({
       messsage: result.content[0].text
     })
   } catch (error) {

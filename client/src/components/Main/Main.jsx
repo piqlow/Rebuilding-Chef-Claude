@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./Main.css";
 import IngredientList from "../IngredientList/IngredientList";
 import ClaudeRecipe from "../ClaudeRecipe/ClaudeRecipe";
+import { getRecipe } from "../../services/ai";
 
 function Main() {
   const [ingredients, setIngredients] = useState([]);
@@ -15,7 +16,10 @@ function Main() {
     }
   }
 
-  function getRecipe() {}
+  async function handleGetRecipe() {
+    const recipeFromAI = await getRecipe(ingredients);
+    setRecipe(recipeFromAI.messsage);
+  }
 
   return (
     <main className="main">
@@ -32,10 +36,13 @@ function Main() {
 
         {/* <IngredientList ingredient={ingredients} /> */}
         {ingredients.length >= 1 && (
-          <IngredientList ingredients={ingredients} getRecipe={func} />
+          <IngredientList
+            ingredients={ingredients}
+            getRecipe={handleGetRecipe}
+          />
         )}
 
-        {/* {ingredients <ClaudeRecipe recipe={}/>} */}
+        {recipe !== "" && <ClaudeRecipe recipe={recipe} />}
       </div>
     </main>
   );
