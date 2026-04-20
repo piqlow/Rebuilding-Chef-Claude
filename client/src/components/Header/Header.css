@@ -3,21 +3,30 @@
   border-bottom: 2px solid gray;
 }
 
-.container {
-  width: 900px;
-  margin-inline: auto;
+.header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-block: 8px;
 }
 
-h1 {
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand > img {
+  height: 50px;
+}
+
+.brand > h1 {
   font-size: 48px;
   font-family: "Bricolage Grotesque";
 }
 
-button {
+
+header > .header-content > button {
   font-size: 20px;
   border: none;
   background-color: black;

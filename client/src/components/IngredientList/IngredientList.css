@@ -1,0 +1,18 @@
+.ingredients {
+  font-family: "Montserrat";
+  height: 400px;
+  padding: 50px;
+  border-radius: 16px;
+  background-color: #fff4dd;
+}
+
+.ingredients > .ingredients-list {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.ingredients > .ingredients-list > li {
+  font-size: 30px
+}
