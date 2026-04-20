@@ -27,7 +27,7 @@
 }
 
 
-header > .header-content > button {
+header > .header-content > a {
   font-size: 20px;
   border: none;
   background-color: black;
@@ -35,4 +35,7 @@ header > .header-content > button {
   padding: 15px 24px;
   border-radius: 5px;
   cursor: pointer;
+  font-family: "Montserrat";
+  font-weight: 600;
+  text-decoration: none;
 }

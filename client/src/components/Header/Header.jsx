@@ -9,7 +9,9 @@ function Header() {
           <img src={ClaudeIcon} alt="" />
           <h1>Chef Claude</h1>
         </div>
-        <button>Go to Github</button>
+        <a href="https://github.com/piqlow/Rebuilding-Chef-Claude">
+          Go to Github
+        </a>
       </div>
     </header>
   );
