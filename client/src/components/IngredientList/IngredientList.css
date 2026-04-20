@@ -13,7 +13,7 @@
 }
 
 .ingredients-list > li {
-  font-size: 30px;
+  font-size: 24px;
   padding: 0;
   margin: 0;
 }
@@ -22,7 +22,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 40px;
 }
 
 .left-get-recipe {

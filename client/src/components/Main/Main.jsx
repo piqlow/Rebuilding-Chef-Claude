@@ -1,13 +1,29 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./Main.css";
 import IngredientList from "../IngredientList/IngredientList";
 import ClaudeRecipe from "../ClaudeRecipe/ClaudeRecipe";
 import { getRecipe } from "../../services/ai";
 
 function Main() {
-  const [ingredients, setIngredients] = useState([]);
+  const [ingredients, setIngredients] = useState([
+    // "Sugar",
+    // "Wheat Flour",
+    // "Chocolate Powder",
+    // "Egg",
+    // "Butter",
+    // "Oil",
+  ]);
   const [recipe, setRecipe] = useState("");
-  // console.log(ingredients);
+  const recipeRef = useRef(null);
+  console.log(recipeRef);
+
+  useEffect(() => {
+    if (recipe !== "") {
+      recipeRef.current.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  }, [recipe]);
 
   function addIngredient(formData) {
     if (formData.get("ingredient") !== "") {
@@ -39,10 +55,11 @@ function Main() {
           <IngredientList
             ingredients={ingredients}
             getRecipe={handleGetRecipe}
+            ref={recipeRef}
           />
         )}
 
-        {recipe !== "" && <ClaudeRecipe recipe={recipe} />}
+        {recipe && <ClaudeRecipe recipe={recipe} />}
       </div>
     </main>
   );

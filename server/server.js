@@ -14,7 +14,22 @@ app.post('/ai', async (req, res) => {
     const { ingredientsString } = req.body
     const result = await generateText({
       model: "openai/gpt-5.4-nano",
-      prompt: `I have ${ingredientsString}. Please give me a recipe you'd recommend I make!`
+      prompt: `
+      I have the following ingredients: ${ingredientsString}.
+      Generate a clear, well-structured recipe using them.
+
+      Requirements:
+      - Do NOT include any introduction, greetings, or filler text (e.g., "Sure", "Here’s a recipe", etc.)
+      - Start directly with the recipe title
+      - Use clean Markdown formatting
+      - Include:
+        - Title
+        - Ingredients (with quantities)
+        - Step-by-step instructions
+      - Keep it concise and practical
+      - If needed, you may include a few common extra ingredients (salt, oil, etc.)
+
+      Output only the recipe.`
     })
 
     return res.json({
